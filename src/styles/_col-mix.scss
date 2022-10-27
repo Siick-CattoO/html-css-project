@@ -1,0 +1,93 @@
+//****************************************************** COLORS
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Link-Colors
+$link-hover: mediumvioletred;
+$link-basic: darkslateblue;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Background-Colors
+
+$bright: white;
+$bright-warm: #fcecec;
+$bright-cold: #e6f0f0;
+
+$bg-neutral: #95c7c7;
+$bg-mid: #699f9c;
+$bg-dark: #3b3b3b;
+$bg-highlight: #f3b2b3;
+
+$bg-shadow: #202020;
+
+///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+//|||||||||||||||||||||||||||||||| MIXINS ||||||||||||||||||||||||||||||||
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Links
+@mixin link-design {
+  text-decoration: none;
+  color: $bg-dark;
+  font-weight: bold;
+}
+
+@mixin link-hover {
+  color: $link-hover;
+  transition-duration: 0.3s;
+}
+
+@mixin link-focus {
+  color: $bright;
+  text-shadow: 1px 2px 2px $bg-dark;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ List-Style
+
+@mixin list-style {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin button {
+  font-weight: 400;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5;
+  //-----------------------
+  display: inline-block;
+  //-----------------------
+  background-color: $bg-mid;
+  @include link-design;
+  border-radius: 8px;
+  //-----------------------
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Shadow
+
+@mixin bg-contrast {
+  color: $bright;
+  background-color: $bg-dark;
+}
+
+@mixin shadow-bright {
+  box-shadow: -1px -1px 5px $bright-warm, 1px 1px 5px $bg-shadow;
+}
+
+@mixin shadow-dark {
+  box-shadow: 0px 1px 15px $bg-shadow;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Aside
+
+@mixin side-container {
+  border-radius: 30px;
+  //---------------------
+  margin: 30px;
+  //---------------------
+  display: flex;
+  flex-direction: column;
+
+  .side-text {
+    margin: 20px;
+  }
+}

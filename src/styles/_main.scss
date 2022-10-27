@@ -1,0 +1,128 @@
+@use "col-mix.scss";
+@use "media-queries.scss";
+
+// ---------------------------------------------- USE
+
+///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+//||||||||||||||||||||||||||||||||||||| MAIN |||||||||||||||||||||||||||||||||||||
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+main {
+  text-align: center;
+}
+
+section {
+  background-color: col-mix.$bright;
+  //----------------------------
+  display: flex;
+  flex-direction: column;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CARDS
+// ------------------>> File: '_card.scss'
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ASIDE
+
+aside {
+  background-color: col-mix.$bg-dark;
+  color: col-mix.$bright;
+  padding-bottom: 50px;
+  //-----------------------
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-evenly;
+
+  .side-container {
+    @include col-mix.side-container;
+    //------------------------
+    @include col-mix.shadow-dark;
+  }
+
+  .select {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ARTICLE
+
+article {
+  background-color: col-mix.$bg-highlight;
+  padding: 20px 0 50px;
+
+  form {
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 20px;
+    //------------------
+    @include col-mix.shadow-bright;
+    border-radius: 30px;
+
+    fieldset {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-radius: 30px;
+    }
+
+    legend {
+      background-color: col-mix.$bg-dark;
+      color: col-mix.$bright;
+      border-radius: 15px;
+      border-bottom: 5px solid col-mix.$bg-mid;
+      //---------------------
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    label {
+      width: 7em;
+      padding: 0.5rem;
+      display: inline-block;
+    }
+
+    input {
+      max-width: 50vw;
+    }
+
+    .experience {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      textarea {
+        min-width: 10vw;
+        padding: 2vw;
+      }
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      background: col-mix.$bright-cold;
+      outline: 1px solid col-mix.$bg-dark;
+      border: 2px solid col-mix.$bg-mid;
+    }
+
+    .select {
+      //---------------
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      label {
+        width: 30vw;
+      }
+    }
+
+    .submit button {
+      margin: 20px auto;
+      padding: 10px;
+      //-----------------------
+      @include col-mix.button;
+    }
+  }
+}

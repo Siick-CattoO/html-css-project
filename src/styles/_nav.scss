@@ -1,0 +1,91 @@
+@use "col-mix.scss";
+@use "media-queries.scss";
+
+// ---------------------------------------------- USE
+
+///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+//|||||||||||||||||||||||||||||||||||| NAVBAR ||||||||||||||||||||||||||||||||||||
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+nav {
+  height: 150px;
+  background-color: col-mix.$bg-neutral;
+  //------------
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo > img {
+    min-width: 12vh;
+    max-width: 150px;
+    margin: 15px;
+    object-fit: contain;
+  }
+
+  .menu-img {
+    max-width: 7vh;
+    margin: 0 10px;
+    //------------------
+    transform: rotate(-45deg);
+    transition-duration: 1s;
+  }
+
+  .menu {
+    @include col-mix.list-style;
+    //----------------
+    position: absolute;
+    top: 150px;
+    //----------------
+    display: flex;
+    justify-content: space-evenly;
+
+    li {
+      height: 50px;
+      width: 100%;
+      padding: 1vh;
+      background-color: col-mix.$bg-neutral;
+      //----------------
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      text-align: center;
+      //----------------
+      transform: translateY(-200px);
+      transition-duration: 1s;
+      //----------------
+    }
+
+    li:first-child {
+      border-bottom-left-radius: 30px;
+    }
+
+    li:last-child {
+      border-bottom-right-radius: 30px;
+    }
+  }
+
+  .checkbox {
+    min-height: 15vh;
+    // max-height: 18vh;
+    min-width: 20vw;
+    opacity: 0;
+    cursor: pointer;
+    //--------------
+    position: absolute;
+    top: 3vh;
+    right: 0.5vw;
+    z-index: 1;
+  }
+
+  //____________________________________checked
+
+  .checkbox:checked ~ .menu-img {
+    transform: rotate(90deg);
+  }
+
+  .checkbox:checked ~ .menu li {
+    //---------------------------
+    transform: translateY(0);
+    transition-duration: 0.25s;
+  }
+}

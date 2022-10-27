@@ -1,0 +1,72 @@
+@use "nav.scss";
+@use "main.scss";
+@use "card.scss";
+@use "footer.scss";
+//------------------------
+@use "col-mix.scss";
+@use "media-queries.scss";
+
+// ---------------------------------------------- USE
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+// ---------------------------------------------- LINK APPERIANCE START
+a {
+  @include col-mix.link-design;
+}
+
+a:hover {
+  @include col-mix.link-hover;
+}
+
+a:focus {
+  @include col-mix.link-focus;
+}
+// ---------------------------------------------- BASIC TEXT SETTINGS
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;
+}
+
+h1 {
+  margin: 5px auto;
+  font-size: calc(1.8rem + 0.5rem);
+}
+
+h2 {
+  margin: 20px auto 10px;
+}
+
+h2 ~ p {
+  margin: 0 10% 10px;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+h4 {
+  padding: 10px;
+  //---------------------
+  @include col-mix.bg-contrast;
+}
+
+h5 {
+  padding: 10px auto 5px;
+  //---------------------
+  //---------------------
+  @include col-mix.bg-contrast;
+}

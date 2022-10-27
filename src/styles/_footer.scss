@@ -1,0 +1,67 @@
+@use "col-mix.scss";
+@use "media-queries.scss";
+
+// ---------------------------------------------- USE
+
+///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+//|||||||||||||||||||||||||||||||||||| FOOTER ||||||||||||||||||||||||||||||||||||
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+footer {
+  @include col-mix.link-design;
+  //---------------------
+  background-color: col-mix.$bg-mid;
+  //---------------------
+  display: flex;
+  flex-direction: column;
+
+  .useful-links {
+    margin: 20px;
+    //----------------------
+
+    .list-wrapper {
+      // width: 100vw;
+      display: flex;
+      justify-content: space-between;
+
+      .website-list {
+        list-style: none;
+        width: 100%;
+
+        img {
+          width: 20px;
+          margin: 5px 10px;
+        }
+      }
+    }
+
+    .list-left {
+      margin-right: 5px;
+      //---------------------
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .list-right {
+      margin-left: 5px;
+      //--------------------
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+  .icons {
+    margin: 50px auto;
+    //--------------------
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    img {
+      max-width: 120px;
+      padding: 20px 30px;
+    }
+  }
+}

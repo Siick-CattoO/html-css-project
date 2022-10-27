@@ -1,0 +1,73 @@
+@use "col-mix.scss";
+@use "media-queries.scss";
+
+// ---------------------------------------------- USE
+
+///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+//||||||||||||||||||||||||||||||||||||| CARD |||||||||||||||||||||||||||||||||||||
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  .card {
+    margin: 10px 15px;
+    min-height: fit-content;
+    max-height: 30rem;
+    max-width: 18rem;
+    //---------------------------
+    color: col-mix.$bright;
+    background-color: col-mix.$bg-dark;
+    border: 4px solid col-mix.$bg-highlight;
+    border-radius: 20px;
+
+    .card-img {
+      height: 20vh;
+      width: 85%;
+      padding: 5px;
+      margin: 20px auto 10px;
+      border-radius: 20px;
+      background-color: col-mix.$bg-highlight;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .card-body {
+      .card-title {
+        margin-bottom: 0.75rem;
+      }
+
+    .card-text {
+      margin: 0 10px;
+    }
+
+      .card-text:last-child {
+        margin-bottom: 0;
+      }
+
+      .btn {
+        margin: 10px auto 25px;
+        padding: 10px;
+        //-----------------------
+        @include col-mix.button;
+      }
+
+      .btn:hover {
+        background-color: col-mix.$bg-neutral;
+        color: col-mix.$link-hover;
+      }
+
+      .btn:focus {
+        @include col-mix.link-focus;
+      }
+    }
+
+    //---------------------------- BACKGROUND IMAGE
+    background-image: url(../images/bones.png);
+    background-size: 25%;
+    //----------------------------
+    @include col-mix.shadow-dark;
+  }
+}

@@ -1,0 +1,112 @@
+///\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+//|||||||||||||||||||||||| MEDIA QUERIES |||||||||||||||||||||||||
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+//|||||||||||||||||||||||||||||| MOBILE |||||||||||||||||||||||||||||||
+
+@media only screen and (max-width: 576px) {
+  .list-wrapper {
+    flex-wrap: wrap;
+  }
+}
+
+//|||||||||||||||||||||||||||||| TABLET |||||||||||||||||||||||||||||||
+
+@media only screen and (min-width: 576px) {
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ header
+  nav {
+    h1 {
+      font-size: calc(3rem + 1vw);
+    }
+
+    .checkbox {
+      width: 15vw;
+      opacity: 0;
+    }
+  }
+}
+
+
+//|||||||||||||||||||||||||||||| DESKTOP |||||||||||||||||||||||||||||||
+
+@media only screen and (min-width: 900px) {
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ header
+  nav {
+    max-height: 100px;
+
+    .logo > img {
+      height: 10vh;
+      margin-left: 10px;
+      object-fit: contain;
+    }
+
+    .menu {
+      transform: translateY(-50px);
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ main
+  main {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr minmax(20vw, 30vw);
+    grid-template-areas:
+      "section aside"
+      "article aside";
+  }
+
+  section {
+    grid-area: section;
+  }
+
+  article {
+    grid-area: article;
+  }
+
+  aside {
+    grid-area: aside;
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ footer
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .list-wrapper {
+      min-width: 45vw;
+    }
+  }
+}
+
+@media only screen and (min-width: 651px) and (max-width: 929px) {
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ main
+  main {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "section aside"
+      "section article";
+  }
+  
+  section {
+    grid-area: section;
+  }
+  
+  article {
+    grid-area: article;
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+
+    }
+  }
+  
+  aside {
+    grid-area: aside;
+  }
+  
+  }
